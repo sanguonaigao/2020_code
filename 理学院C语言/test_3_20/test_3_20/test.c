@@ -3,6 +3,14 @@
 #include <stdio.h>
 #include <string.h>
 
+int main()
+{
+    printf("hehe\n");
+	return 0;
+}
+
+
+
 //int main()
 //{
 //	printf("%d\n", strlen("c:\test\32\test.c"));
@@ -11,7 +19,7 @@
 //	//printf("%d\n", strlen("bit"));
 //	//strlen() 求字符串长度的一个函数
 //	return 0;
-//}
+//}F
 //
 //int main()
 //{

@@ -153,5 +153,6 @@ char IsWin(char board[ROW][COL], int row, int col)
 	{
 		return 'Q';
 	}
+	//¼ÌÐø
 	return 'C';
 }

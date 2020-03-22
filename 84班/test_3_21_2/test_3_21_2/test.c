@@ -197,3 +197,32 @@
 //
 //	return 0;
 //}
+
+//int main()
+//{
+//	int ch = 0;
+//	while ((ch = getchar()) != EOF)
+//	{
+//		if (ch<'A' || ch>'Z')
+//		{
+//			continue;
+//		}
+//		putchar(ch);
+//	}
+//	return 0;
+//}
+
+
+
+int main()
+{
+	//这种创建数组的方式，是数组有10个元素，把第一个元素初始化为0，其余元素默认初始化为0
+	int arr1[10] = { 0 };
+	//这种创建数组的方式，不直接指定数组的元素个数，次数数组根据初始化的内容，来指定元素个数
+	//因为{}中只有一个0，所以数组arr2中只有一个元素。
+	int arr2[] = { 0 };
+
+	printf("%d\n", sizeof(arr1));
+	printf("%d\n", sizeof(arr2));
+
+}

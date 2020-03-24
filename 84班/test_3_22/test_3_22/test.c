@@ -346,15 +346,24 @@
 //	return 0;
 //}
 
-int* test()
-{
-	int a = 10;
-	return &a;
-}
+//int* test()
+//{
+//	int a = 10;
+//	return &a;
+//}
+//int main()
+//{
+//	int *p = test();
+//	*p = 20;
+//
+//	return 0;
+//}
+
 int main()
 {
-	int *p = test();
-	*p = 20;
-
+	char c = 1;
+	printf("%u\n", sizeof(c));
+	printf("%u\n", sizeof(+c));
+	printf("%u\n", sizeof(c));
 	return 0;
 }

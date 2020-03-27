@@ -1,33 +1,32 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
-
 #include "game.h"
 
 void menu()
 {
-	printf("*****************************\n");
-	printf("*******    1. play     ******\n");
-	printf("*******    0. exit     ******\n");
-	printf("*****************************\n");
+	printf("*************************\n");
+	printf("****    1. play      ****\n");
+	printf("****    0. exit      ****\n");
+	printf("*************************\n");
 }
 
 void game()
 {
-	//雷的信息存储
-	//1. 布置好的雷的信息
-	char mine[ROWS][COLS] = { 0 };// 11 * 11
-	//2. 排查出的雷的信息
-	char show[ROWS][COLS] = { 0 };
+	//存放布置好的雷的信息
+	char mine[ROWS][COLS] = {0};//'0' - 不是雷
+	//存放排查出的雷的信息
+	char show[ROWS][COLS] = { 0 };//'*' - 神秘-未排查
 	//初始化
 	InitBoard(mine, ROWS, COLS, '0');
 	InitBoard(show, ROWS, COLS, '*');
 	//打印棋盘
 	//DisplayBoard(mine, ROW, COL);
-	DisplayBoard(show, ROW, COL);
+	//DisplayBoard(show, ROW, COL);
 	//布置雷
 	SetMine(mine, ROW, COL);
 	//DisplayBoard(mine, ROW, COL);
-	//扫雷
+	DisplayBoard(show, ROW, COL);
+	//排查雷
 	FindMine(mine, show, ROW, COL);
 }
 
@@ -50,7 +49,7 @@ void test()
 			printf("退出游戏\n");
 			break;
 		default:
-			printf("选择错误,重新选择!\n");
+			printf("选择错误\n");
 			break;
 		}
 	} while (input);

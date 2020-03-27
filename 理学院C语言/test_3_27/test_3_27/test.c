@@ -150,19 +150,36 @@
 //
 //	return 0;
 //}
-
+//
+//int main()
+//{
+//	int ch = 0;
+//	ch = getchar();
+//	if (ch >= 'A' && ch < 'Z')
+//	{
+//		putchar(ch+32);
+//	}
+//	else
+//	{
+//		putchar(ch);
+//	}
+//
+//	return 0;
+//}
+int my_power(int i, int k)
+{
+	int n = 0;
+	while (k >0)
+	{
+		return i * my_power(i, k - 1);
+	}
+	return 1;
+}
 int main()
 {
-	int ch = 0;
-	ch = getchar();
-	if (ch >= 'A' && ch < 'Z')
-	{
-		putchar(ch+32);
-	}
-	else
-	{
-		putchar(ch);
-	}
-
+	int i = 0;
+	int k = 0;
+	scanf("%d%d", &i, &k);
+	printf("%d\n", my_power(i, k));
 	return 0;
 }

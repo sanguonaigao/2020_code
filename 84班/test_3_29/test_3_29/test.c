@@ -229,10 +229,15 @@ int add(int x, int y)
 
 int main()
 {
-	int a = 10;
-	int b = 20;
-	int sum = Add(a, b);
-	printf("%d\n", sum);
+	//int a = 10;
+	//int b = 20;
+	//int sum = Add(a, b);
+	//printf("%d\n", sum);
+	printf("hehe\n");
+	printf("%c\n", 9);
+	printf("%c\n", 9);
 
+	printf("hehe\n");
+	puts("01\v2345");
 	return 0;
 }

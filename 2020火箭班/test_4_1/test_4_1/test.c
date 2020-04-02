@@ -316,35 +316,64 @@
 //	//
 //	return 0;
 //}
+//
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	int i = 0;
+//	int* p = arr;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	for (i = 0; i < 10; i++)
+//	{
+//		//printf("%d ", i[arr]); 
+//		printf("%d ", arr[i]); //arr[i] ==> *(arr+i)
+//	}
+//
+//	//数组可以通过指针来访问
+//	//
+//	//for (i = 0; i < sz; i++)
+//	//{
+//	//	//printf("%p ---- %p\n", p + i, &arr[i]);
+//	//	*(p + i) = i+1;
+//	//}
+//	//for (i = 0; i < sz; i++)
+//	//{
+//	//	//printf("%d ", *(p + i));  //*(arr+i)  arr[i]   p[i]
+//	//	//printf("%d ", p[i]);//   i[p] ==  *(i+p) == *(p+i) == p[i]
+//	//	printf("%d ", i[p]);  //arr[i]
+//	//}
+//	/*for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}*/
+//	return 0;
+//}
 
+#include<stdlib.h>
+#include<string.h>
+#include<assert.h>
+void reverse_string(char *string)
+{
+	assert(string);
+	if (*string == '\0')
+	{
+		return;
+	}
+	else
+	{
+		int len = strlen(string);
+		char tmp = string[0];
+		string[0] = string[len - 1];
+		string[len - 1] = '\0';
+		reverse_string(string + 1);
+		string[len - 1] = tmp;
+	}
+}
 int main()
 {
-	int arr[10] = { 0 };
-	int i = 0;
-	int* p = arr;
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	for (i = 0; i < 10; i++)
-	{
-		//printf("%d ", i[arr]); 
-		printf("%d ", arr[i]); //arr[i] ==> *(arr+i)
-	}
-
-	//数组可以通过指针来访问
-	//
-	//for (i = 0; i < sz; i++)
-	//{
-	//	//printf("%p ---- %p\n", p + i, &arr[i]);
-	//	*(p + i) = i+1;
-	//}
-	//for (i = 0; i < sz; i++)
-	//{
-	//	//printf("%d ", *(p + i));  //*(arr+i)  arr[i]   p[i]
-	//	//printf("%d ", p[i]);//   i[p] ==  *(i+p) == *(p+i) == p[i]
-	//	printf("%d ", i[p]);  //arr[i]
-	//}
-	/*for (i = 0; i < sz; i++)
-	{
-		printf("%d ", arr[i]);
-	}*/
+	char p[] = "abcde";
+	reverse_string(p);
+	printf("%s\n", p);
+	system("pause");
 	return 0;
 }

@@ -349,18 +349,18 @@ void left_move(char* arr, int k)
 
 //abcdefabcdef
 
-int main()
-{
-	char arr1[] = "abcdef";
-	char arr2[] = "cdefab";
-	int ret = is_left_move(arr1, arr2);
-	if (ret == 1)
-		printf("Yes\n");
-	else
-		printf("No\n");
-
-	return 0;
-}
+//int main()
+//{
+//	char arr1[] = "abcdef";
+//	char arr2[] = "cdefab";
+//	int ret = is_left_move(arr1, arr2);
+//	if (ret == 1)
+//		printf("Yes\n");
+//	else
+//		printf("No\n");
+//
+//	return 0;
+//}
 
 //
 //int main()
@@ -372,4 +372,9 @@ int main()
 //
 //	return 0;
 //}
-
+int main()
+{
+	char arr[] = { 'A', 'b', 'C' };
+	printf("%s\n", strlwr(arr));
+	return 0;
+}

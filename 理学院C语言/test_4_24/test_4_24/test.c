@@ -165,13 +165,13 @@
 //
 //	return 0;
 //}
-
-int main()
-{
-	char arr1[20] = "hello";//6
-	char arr2[] = " world";
-	strcat(arr1, arr2);
-	puts(arr1);//helloworld
-
-	return 0;
-}
+//
+//int main()
+//{
+//	char arr1[20] = "hello";//6
+//	char arr2[] = " world";
+//	strcat(arr1, arr2);
+//	puts(arr1);//helloworld
+//
+//	return 0;
+//}

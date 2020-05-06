@@ -1,0 +1,20 @@
+﻿生成启动时间为 2020/5/6 19:50:33。
+     1>项目“C:\2020_code\84班\Contact_Dynamic\Contact_Dynamic\Contact_Dynamic.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在对“Debug\Contact_Dynamic.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         所有输出均为最新。
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\2020_code\84班\Contact_Dynamic\Debug\Contact_Dynamic.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Contact_Dynamic.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\2020_code\84班\Contact_Dynamic\Debug\Contact_Dynamic.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\2020_code\84班\Contact_Dynamic\Debug\Contact_Dynamic.lib" /MACHINE:X86 Debug\contact.obj
+         Debug\test.obj
+         Contact_Dynamic.vcxproj -> C:\2020_code\84班\Contact_Dynamic\Debug\Contact_Dynamic.exe
+       Manifest:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\2020_code\84班\Contact_Dynamic\Debug\Contact_Dynamic.exe;#1" /manifest Debug\Contact_Dynamic.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         正在删除文件“Debug\Contact_Dynamic.unsuccessfulbuild”。
+         正在对“Debug\Contact_Dynamic.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\2020_code\84班\Contact_Dynamic\Contact_Dynamic\Contact_Dynamic.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.21

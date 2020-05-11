@@ -1,0 +1,10 @@
+file:d:\2020_code\84°à\test_5_11\test_5_11\test.c line:65 date:May 11 2020 time:20:20:31 i=0
+file:d:\2020_code\84°à\test_5_11\test_5_11\test.c line:65 date:May 11 2020 time:20:20:31 i=1
+file:d:\2020_code\84°à\test_5_11\test_5_11\test.c line:65 date:May 11 2020 time:20:20:31 i=2
+file:d:\2020_code\84°à\test_5_11\test_5_11\test.c line:65 date:May 11 2020 time:20:20:31 i=3
+file:d:\2020_code\84°à\test_5_11\test_5_11\test.c line:65 date:May 11 2020 time:20:20:31 i=4
+file:d:\2020_code\84°à\test_5_11\test_5_11\test.c line:65 date:May 11 2020 time:20:20:31 i=5
+file:d:\2020_code\84°à\test_5_11\test_5_11\test.c line:65 date:May 11 2020 time:20:20:31 i=6
+file:d:\2020_code\84°à\test_5_11\test_5_11\test.c line:65 date:May 11 2020 time:20:20:31 i=7
+file:d:\2020_code\84°à\test_5_11\test_5_11\test.c line:65 date:May 11 2020 time:20:20:31 i=8
+file:d:\2020_code\84°à\test_5_11\test_5_11\test.c line:65 date:May 11 2020 time:20:20:31 i=9

@@ -1,19 +1,120 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 #include <stdio.h>
-
+#include <limits.h>
 
 int main()
 {
-	int arr[3][4] = {1,2,3,4,5,6,7,8,9,10,11,12};
-	int *p = &arr[0][0];
-	int i = 0;
-	for (i = 0; i < 12; i++)
-	{
-		printf("%d ", *(p + i));
-	}
+	int a = 0;
+	int b = 0;
+	scanf("%d%d", &a, &b);
+	int average = a&b + ((a^b) >> 1);
+	printf("avg = %d\n", average);
+
 	return 0;
 }
+
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	scanf("%d%d", &a, &b);
+//	//右移一位有除2的效果
+//	int average = a + ((b - a) >> 1);
+//	printf("avg = %d\n", average);
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	scanf("%d%d", &a, &b);
+//	int average = (a + b) / 2;
+//	printf("avg = %d\n", average);
+//
+//	return 0;
+//}
+
+
+//使用judge函数判断num是否为2的幂次方
+//int judge(int n)
+//{
+//	if ((n&(n - 1)) == 0)
+//		return 1;
+//	else
+//		return 0;
+//}
+//
+//int main()
+//{
+//	int num = 0;
+//	scanf("%d", &num);
+//	int ret = judge(num);
+//	if (ret == 1)
+//	{
+//		printf("%d 是2的幂次方\n", num);
+//	}
+//	else
+//	{
+//		printf("%d 不是2的幂次方\n", num);
+//	}
+//
+//	return 0;
+//}
+
+////使用judge函数判断num是否为2的幂次方
+//int judge(int num)
+//{
+//	int ret = 1;
+//	while (ret <= num)
+//	{
+//		//如果小于，则说明还没穷举完
+//		if (ret < num)
+//		{
+//			//每次产生一个2的幂次方数
+//			ret *= 2;
+//		}
+//		else
+//		{
+//			//是
+//			return 1;
+//		}
+//	}
+//	//不是
+//	return 0;
+//}
+//int main()
+//{
+//	int i = 0;
+//	int j = 0;
+//	//确定打印9行
+//	for (i = 1; i <= 9; i++)
+//	{
+//		//确定每一行打印几项
+//		for (j = 1; j <= i; j++)
+//		{
+//			printf("%d*%d=%2d ", i, j, i*j);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+
+
+//int main()
+//{
+//	int arr[3][4] = {1,2,3,4,5,6,7,8,9,10,11,12};
+//	int *p = &arr[0][0];
+//	int i = 0;
+//	for (i = 0; i < 12; i++)
+//	{
+//		printf("%d ", *(p + i));
+//	}
+//	return 0;
+//}
 
 
 //void print(int* p, int sz)

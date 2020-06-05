@@ -1,7 +1,8 @@
-#define _CRT_SECURE_NO_WARNINGS 1
+#define _CRT_SnECURE_NO_WARNINGS 1
 
 #include <stdio.h>
 #include <string.h>
+
 
 //main函数有参数吗？
 //main函数有参数
@@ -12,12 +13,12 @@
 //argv
 
 //envp-环境变量
-
-int main(int argc, char* argv[], char* envp[])
-{
-
-	return 0;
-}
+//
+//int main(int argc, char* argv[], char* envp[])
+//{
+//
+//	return 0;
+//}
 
 //
 //int main()

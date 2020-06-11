@@ -2,39 +2,46 @@
 
 #include <stdio.h>
 #include <string.h>
-
-struct Stu
-{
-	//数据
-	char name[20];
-	float score;
-	//指针
-	struct Stu* next;
-};
-
 int main()
 {
-	struct Stu* head = NULL;
-	struct Stu* cur = NULL;
-	struct Stu s1 = { "张三", 95.5 };
-	struct Stu s2 = { "李四", 88.5 };
-	struct Stu s3 = { "王五", 90.0 };
-
-	s1.next = &s2;
-	s2.next = &s3;
-	s3.next = NULL;
-	head = &s1;
-	cur = head;
-
-	while (cur != NULL)
-	{
-		printf("%s %f\n", cur->name, cur->score);
-		cur = cur->next;
-	}
-
+	printf("%d\n", strlen("\\\075"));
 	return 0;
 }
+
 //
+//
+//struct Stu
+//{
+//	//数据
+//	char name[20];
+//	float score;
+//	//指针
+//	struct Stu* next;
+//};
+//
+//int main()
+//{
+//	struct Stu* head = NULL;
+//	struct Stu* cur = NULL;
+//	struct Stu s1 = { "张三", 95.5 };
+//	struct Stu s2 = { "李四", 88.5 };
+//	struct Stu s3 = { "王五", 90.0 };
+//
+//	s1.next = &s2;
+//	s2.next = &s3;
+//	s3.next = NULL;
+//	head = &s1;
+//	cur = head;
+//
+//	while (cur != NULL)
+//	{
+//		printf("%s %f\n", cur->name, cur->score);
+//		cur = cur->next;
+//	}
+//
+//	return 0;
+//}
+////
 //struct Stu
 //{
 //	long num;

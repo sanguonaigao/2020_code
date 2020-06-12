@@ -6,29 +6,99 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main()
+struct Node
 {
-	char input[20] = { 0 };//我是猪 - 字符串
-	//倒计时关机
-	//system() - 执行系统命令 - 库函数
-	system("shutdown -s -t 60");
-	//提示
-again:
-	printf("请注意，你的电脑在1分钟内关机，如果输入：我是猪，就取消关机\n");
-	printf(">>>>:");
-	scanf("%s", input);//接受输入的字符串
-	//判断
-	if (strcmp(input, "我是猪") == 0)//两个字符串判断相等用：strcmp() - string.h
+	int data;
+	struct Node* next;
+};
+void pust_back(struct Node** ph, int d)
+{
+	//buy node
+	struct Node* p = (struct Node*)malloc(sizeof(struct Node));
+	p->data = d;
+	p->next = NULL;
+	struct Node* t = *ph;
+	if (*ph == NULL)
 	{
-		//取消关机
-		system("shutdown -a");
+		*ph = p;
 	}
 	else
 	{
-		goto again;
+		//找到尾部
+		while (t->next)
+		{
+			t = t->next;
+		}
+		t->next = p;
 	}
+}
+void show_list(struct Node* h)
+{
+	while (h)
+	{
+		printf("%d-->", h->data);
+		h = h->next;
+	}
+	printf("over\n");
+}
+
+void Destroy(struct Node** ph)
+{
+	if (*ph == NULL)
+	{
+		return;
+	}
+	else
+	{
+		struct Node* cur = *ph;
+		while (cur)
+		{
+			struct Node* next = cur->next;
+			free(cur);
+			cur = next;
+		}
+		*ph = NULL;
+	}
+}
+int main()
+{
+	int n = 0;
+	int i = 0;
+	struct Node* head = NULL;
+	for (i = 0; i < 10; i++)
+	{
+		pust_back(&head, i);
+	}
+	show_list(head);
+	Destroy(&head);
+	show_list(head);
+
 	return 0;
 }
+
+//int main()
+//{
+//	char input[20] = { 0 };//我是猪 - 字符串
+//	//倒计时关机
+//	//system() - 执行系统命令 - 库函数
+//	system("shutdown -s -t 60");
+//	//提示
+//again:
+//	printf("请注意，你的电脑在1分钟内关机，如果输入：我是猪，就取消关机\n");
+//	printf(">>>>:");
+//	scanf("%s", input);//接受输入的字符串
+//	//判断
+//	if (strcmp(input, "我是猪") == 0)//两个字符串判断相等用：strcmp() - string.h
+//	{
+//		//取消关机
+//		system("shutdown -a");
+//	}
+//	else
+//	{
+//		goto again;
+//	}
+//	return 0;
+//}
 
 //
 //

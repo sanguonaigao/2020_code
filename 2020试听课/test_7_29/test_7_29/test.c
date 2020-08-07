@@ -1,30 +1,41 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
 int main()
 {
-	char input[20] = {0};
-	//关机程序
-	//1.关机
-	//system()库函数 - 执行系统命令的
-	system("shutdown -s -t 60");
-again:
-	printf("请注意，你的电脑在1分钟内关机，如果输入：我是猪，就取消关机!\n");
-	printf("请输入:>");
-	scanf("%s", input);//%s-字符串
-	if (strcmp(input, "我是猪") == 0)//两个字符串比较大小不能使用==  strcmp = string compare
-	{
-		system("shutdown -a");//取消关机
-	}
-	else
-	{
-		goto again;
-	}
+	char arr[50];
+	gets(arr);
+	printf("%s\n", arr);
 	return 0;
 }
+
+//
+//#include <stdio.h>
+//#include <string.h>
+//#include <stdlib.h>
+//
+//int main()
+//{
+//	char input[20] = {0};
+//	//关机程序
+//	//1.关机
+//	//system()库函数 - 执行系统命令的
+//	system("shutdown -s -t 60");
+//again:
+//	printf("请注意，你的电脑在1分钟内关机，如果输入：我是猪，就取消关机!\n");
+//	printf("请输入:>");
+//	scanf("%s", input);//%s-字符串
+//	if (strcmp(input, "我是猪") == 0)//两个字符串比较大小不能使用==  strcmp = string compare
+//	{
+//		system("shutdown -a");//取消关机
+//	}
+//	else
+//	{
+//		goto again;
+//	}
+//	return 0;
+//}
 
 
 //

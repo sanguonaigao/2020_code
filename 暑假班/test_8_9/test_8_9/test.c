@@ -1,31 +1,38 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
-//写一个加法的代码
 #include <stdio.h>
-#include <string.h>
-
-int Add(int x, int y)
-{
-	int z = x + y;
-	return z;
-}
 
 int main()
 {
-	//函数 - 
-	//f(x, y) = x+y;
-	int num1 = 0;
-	int num2 = 0;
-	scanf("%d%d", &num1, &num2);
-	//int sum = num1 + num2;
-	//函数的方式来解决
-	//希望用一个加法的函数
-	//Add
-	int sum = Add(num1, num2);
-
-	printf("%d\n", sum);
+	printf("%d", '\v');
 	return 0;
 }
+//写一个加法的代码
+//#include <stdio.h>
+//#include <string.h>
+//
+//int Add(int x, int y)
+//{
+//	int z = x + y;
+//	return z;
+//}
+//
+//int main()
+//{
+//	//函数 - 
+//	//f(x, y) = x+y;
+//	int num1 = 0;
+//	int num2 = 0;
+//	scanf("%d%d", &num1, &num2);
+//	//int sum = num1 + num2;
+//	//函数的方式来解决
+//	//希望用一个加法的函数
+//	//Add
+//	int sum = Add(num1, num2);
+//
+//	printf("%d\n", sum);
+//	return 0;
+//}
 
 //int main()
 //{

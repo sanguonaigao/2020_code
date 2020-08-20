@@ -1,22 +1,41 @@
 #define _CRT_SEnCURE_NO_WARNINGS 1
 
 #include <stdio.h>
-
-
+#include<stdio.h>
+#include<stdio.h>
 int main()
 {
-	int i = 1;
-	do
+	int count = 0;
+	int i = 0;
+	int j = 0;
+	int sum = 10 * i + j;
+	for (i = 0; i < 10; i++)
 	{
-		if (i == 5)
-			continue;
-
-		printf("%d ", i);
-		i++;
-	} while (i <= 10);
+		for (j = 0; j < 10; j++)
+		{
+			if (9 == j)
+				count++;//个位是9
+		}
+		if (9 == i)
+			count += 10;//十位是9
+	}
+	printf("1-100的整数中出现了%d个9", count);
 	return 0;
 }
-
+//int main()
+//{
+//	int i = 1;
+//	do
+//	{
+//		if (i == 5)
+//			continue;
+//
+//		printf("%d ", i);
+//		i++;
+//	} while (i <= 10);
+//	return 0;
+//}
+//
 
 //
 //int main()

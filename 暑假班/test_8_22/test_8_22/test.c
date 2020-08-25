@@ -1,9 +1,135 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 #include <stdio.h>
-#include <math.h>
 #include <string.h>
 
+#include <stdio.h>
+int main(void){
+	char ch[][5] = { 'I', 'O', 'I', 'H', 'F',
+		'B','D','L','B','V',
+		'N', 'C', 'P', 'L', 'K',
+		'F', 'Y', 'O', 'Z', 'S',
+		'D', 'O', 'X', 'C', 'V',
+		'N', 'F' };
+	                     //Z          Y          P          C
+	printf("%c%c%c%c\n", ch[0][18], ch[4][-4], ch[1][7], 5[ch][-2]);
+	return 0;
+}
+//
+//int FirstNotRepeatingChar(char* str) {
+//	if (strlen(str) == 0)
+//		return -1;
+//	int hash[256] = { 0 };
+//	int i = 0;
+//	while (str[i] != '\0'){
+//		hash[str[i]]++;
+//		++i;
+//	}
+//	i = 0;
+//	while (str[i] != '\0'){
+//		if (1 == hash[str[i]]){
+//			return i;
+//		}
+//		i++;
+//	}
+//	return -1;
+//}
+//int main()
+//{
+//	int ret = FirstNotRepeatingChar("aadccb");
+//	if (ret == -1)
+//	{
+//		printf("不存在只出现一次的字符\n");
+//	}
+//	else
+//	{
+//		printf("第一个只出现一次的字符下标是：%d\n", ret);
+//	}
+//	return 0;
+//}
+//
+//int main()
+//{
+//	int score = 0;
+//	scanf("%d", &score);
+//	if (score >= 60)
+//		printf("Pass\n");
+//	else
+//		printf("Fail\n");
+//
+//	return 0;
+//}
+//
+//
+//int main()
+//{
+//	int arr[] = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
+//	int i = 0;
+//	int j = 0;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//
+//	for (i = 0; i < sz-1; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < sz- i - 1; j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				int tmp = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = tmp;
+//			}
+//		}
+//	}
+//
+//	return 0;
+//}
+//#include <stdio.h>
+//
+//int main()
+//{
+//	int arr[] = { 1, 2, 3, 4, 5, 1, 2, 3, 4 };
+//	int ret = 0;
+//	int i = 0;
+//
+//	for (i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+//	{
+//		ret ^= arr[i];
+//	}
+//	printf("%d\n", ret);
+//	return 0;
+//}
+//void Swap(int *p1, int* p2)
+//{
+//	int tmp = 0;
+//	tmp = *p1;
+//	*p1 = *p2;
+//	*p2 = tmp;
+//}
+//int main()
+//{
+//	int score = 0;
+//	scanf("%d", &score);
+//	if (score >= 140)
+//	{
+//		printf("Genius\n");
+//	}
+//	return 0;
+//}
+//#include <math.h>
+//#include <string.h>
+//
+//#define  MUL(X, Y)   ((X)*(Y))
+//#define CIR(r)  r*r 
+//int main()
+//{
+//	int a = 1;
+//	int b = 2;
+//	int t;
+//	t = CIR(a + b);
+//	printf("%d\n", t);
+//	return 0;
+//}
 //写一个函数判断一年是不是闰年
 //是闰年返回1
 //不是闰年返回0

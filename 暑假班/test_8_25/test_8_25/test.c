@@ -8,6 +8,27 @@
 
 int count = 0;
 
+#include<stdio.h>
+int DigitSum(int a)
+{
+	int sum = 0;
+	if (a > 9)
+	{
+		DigitSum(a / 10);
+	}
+	sum = sum + a % 10;
+	return sum;
+}
+int main()
+{
+	int a = 0;
+	scanf("%d", &a);
+	int ret = DigitSum(a);
+	printf("%d ", ret);
+	return 0;
+}
+
+
 //int Fib(int n)
 //{
 //	if (n == 3)
@@ -22,39 +43,39 @@ int count = 0;
 //}
 
 //�ǵݹ鷽ʽ
-int Fib(int n)
-{
-	int a = 1;
-	int b = 1;
-	int c = 1;
-
-	while (n>2)
-	{
-		c = a + b;
-		a = b;
-		b = c;
-		n--;
-	}
-	return c;
-}
-
-int main()
-{
-	int n = 0;
-	scanf("%d", &n);
-	int ret = Fib(n);
-	//50 - 2^0
-	//49 48 = 2^1
-	//48 47 47 46 2^2
-	//47 46 46 45 46 45 45 44 2^3
-	//2^4
-	//....
-	//
-	
-	printf("ret = %d\n", ret);
-
-	return 0;
-}
+//int Fib(int n)
+//{
+//	int a = 1;
+//	int b = 1;
+//	int c = 1;
+//
+//	while (n>2)
+//	{
+//		c = a + b;
+//		a = b;
+//		b = c;
+//		n--;
+//	}
+//	return c;
+//}
+//
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int ret = Fib(n);
+//	//50 - 2^0
+//	//49 48 = 2^1
+//	//48 47 47 46 2^2
+//	//47 46 46 45 46 45 45 44 2^3
+//	//2^4
+//	//....
+//	//
+//	
+//	printf("ret = %d\n", ret);
+//
+//	return 0;
+//}
 
 //int Fac(int n)
 //{

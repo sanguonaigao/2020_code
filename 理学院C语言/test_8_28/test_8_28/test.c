@@ -3,24 +3,43 @@
 #include <stdio.h>
 #include <string.h>
 
-
-
-void test()
+void reverse_string(char * str, int len)
 {
-	static int a = 1;
-	a++;
-	printf("%d ", a);
+	char itm;
+	if (len > 0)
+	{
+		itm = *str;
+		*str = *(str + len - 1);
+		*(str + len - 1) = itm;
+		reverse_string(str + 1, len - 2);
+	}
 }
-
 int main()
 {
-	int i = 0;
-	for (i = 0; i < 10; i++)
-	{
-		test();
-	}
+	char str[] = "abcdefg";
+	int len = strlen(str);
+	reverse_string(str, len);
+	printf("%s\n", str);
 	return 0;
 }
+
+//
+//void test()
+//{
+//	static int a = 1;
+//	a++;
+//	printf("%d ", a);
+//}
+//
+//int main()
+//{
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		test();
+//	}
+//	return 0;
+//}
 //sizeof - 操作符
 //计算的某个对象或者类型的大小
 //只关心空间大小，不关心内容

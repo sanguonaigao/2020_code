@@ -13,6 +13,7 @@ void menu()
 
 void game()
 {
+	char ret = 0;
 	//设计一下三子棋游戏
 	//存储数据的
 	char board[ROW][COL] = {0};//数组应该初始化为空格
@@ -21,21 +22,46 @@ void game()
 	DisplayBoard(board, ROW, COL);
 	//分析以下发现：
 	//在游戏玩的过程中
-	//1. 玩家赢
-	//2. 电脑赢
-	//3. 平局了
-	//4. 继续
+	//1. 玩家赢 - '*'
+	//2. 电脑赢 - '#'
+	//3. 平局了 - 'Q'
+	//4. 继续   - 'C'
+
 
 	while (1)
 	{
 		PlayerMove(board, ROW, COL);
 		//判断输赢
+		ret = CheckWin(board, ROW, COL);
+		if (ret != 'C')
+		{
+			break;
+		}
 		DisplayBoard(board, ROW, COL);
 
 		ComputerMove(board, ROW, COL);
 		//判断输赢
+		ret = CheckWin(board, ROW, COL);
+		if (ret != 'C')
+		{
+			break;
+		}
+
 		DisplayBoard(board, ROW, COL);
 	}
+	if (ret == '*')
+	{
+		printf("玩家赢\n");
+	}
+	else if (ret == '#')
+	{
+		printf("电脑赢\n");
+	}
+	else if (ret == 'Q')
+	{
+		printf("平局\n");
+	}
+	DisplayBoard(board, ROW, COL);
 }
 
 int main()
@@ -59,6 +85,7 @@ int main()
 			printf("选择错误\n");
 			break;
 		}
+		//
 	} while (input);
 	return 0;
 }

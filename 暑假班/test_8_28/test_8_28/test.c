@@ -1,6 +1,39 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include <stdio.h>
 #include <string.h>
+#include <windows.h>
+
+//int main()
+//{
+//	char *c[] = { "ENTER", "NEW", "POINT", "FIRST" };
+//	char**cp[] = { c + 3, c + 2, c + 1, c };
+//	char***cpp = cp;
+//	printf("%s\n", **++cpp);
+//	printf("%s\n", *--*++cpp + 3);
+//	printf("%s\n", *cpp[-2] + 3);
+//	printf("%s\n", cpp[-1][-1] + 1);
+//	return 0;
+//}
+
+//int main()
+//{
+//	FILE*pf = fopen("test.txt", "w");
+//	fputs("abcdef", pf);//先将代码放在输出缓冲区
+//	printf("睡眠10秒-已经写数据了，打开test.txt文件，发现文件没有内容\n");
+//	Sleep(10000);
+//	printf("刷新缓冲区\n");
+//	fflush(pf);//刷新缓冲区时，才将输出缓冲区的数据写到文件（磁盘）
+//	//注：fflush 在高版本的VS上不能使用了
+//	printf("再睡眠10秒-此时，再次打开test.txt文件，文件有内容了\n");
+//	Sleep(10000);
+//	fclose(pf);
+//	//注：fclose在关闭文件的时候，也会刷新缓冲区
+//	pf = NULL;
+//
+//	return 0;
+//}
+
+
 
 //void print_arr(int arr[3][4], int row, int col)
 //{

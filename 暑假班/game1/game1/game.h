@@ -18,3 +18,5 @@ void PlayerMove(char board[ROW][COL], int row, int col);
 //µçÄÔÏÂÆå
 void ComputerMove(char board[ROW][COL], int row, int col);
 
+//¼ì²âÓÎÏ·ÊäÓ®
+char CheckWin(char board[ROW][COL], int row, int col);

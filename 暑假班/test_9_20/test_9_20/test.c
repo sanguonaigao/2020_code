@@ -240,28 +240,46 @@
 //F10-逐过程
 //F11-逐语句
 //
+//
+//void test()
+//{
+//	printf("test\n");//设置一个断点
+//	printf("test\n");
+//	printf("test\n");
+//	printf("test\n");
+//	printf("test\n");
+//	printf("test\n");
+//}
+//
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	printf("bit\n");
+//	int i = 0;
+//	test();
+//
+//	for (i = 0; i < 10; i++)
+//	{
+//		arr[i] = i;
+//	}
+//
+//	return 0;
+//}
 
-void test()
-{
-	printf("test\n");//设置一个断点
-	printf("test\n");
-	printf("test\n");
-	printf("test\n");
-	printf("test\n");
-	printf("test\n");
-}
+
 
 int main()
 {
-	int arr[10] = { 0 };
-	printf("bit\n");
-	int i = 0;
-	test();
+	int a = 10;
+	float* pf = &a;
+	printf("a: %d\n", a);
+	printf("a: %f\n", a);
+	printf("*pf: %f\n", *pf);
 
-	for (i = 0; i < 10; i++)
-	{
-		arr[i] = i;
-	}
+	*pf = 10.0;
+	printf("a: %d\n", a);
+	printf("a: %f\n", a);
+	printf("*pf: %f\n", *pf);
 
 	return 0;
 }

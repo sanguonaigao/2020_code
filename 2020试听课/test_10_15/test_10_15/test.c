@@ -1,28 +1,100 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-
-
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
+#include<stdio.h>
+#include<stdio.h>
+#include<math.h>
+int Sad(int i)
+{
+	int k = 0;
+	int sum = 0;
+	int j = 0;
+	for (k = 0; k < 5; k++)
+	{
+		j += i * pow(10, k);
+		sum += j;
+	}
+	return sum;
+}
 int main()
 {
-	char input[20] = { 0 };
-	system("shutdown -s -t 60");//指向系统命令
-again:
-	printf("请注意，你的电脑在1分钟内关机，如果输入：我是猪，就取消关机\n");
-	scanf("%s", input);
-	if (strcmp(input, "我是猪") == 0)//比较2个字符串-strcmp()
-	{
-		system("shutdown -a");
-	}
-	else
-	{
-		goto again;
-	}
+	int a = 0;
+	int c = 0;
+	printf("请输入a值：\n");
+	scanf("%d", &a);
+	c = Sad(a);
+	printf("Sn=%d", c);
 	return 0;
 }
-
+//#include <stdio.h>
+//#include <string.h>
+//#include <stdlib.h>
+//#define _CRT_SECURE_NO_WARNINGS 1
+//#include<stdio.h>
+//#include<stdlib.h>
+//struct Node
+//{
+//	int number;//密码
+//	int id;//编号
+//	struct Node* next;
+//};
+//
+//void init(struct Node** L)
+//{
+//	(*L) = (struct Node*)malloc(sizeof(struct Node));
+//	(*L)->next = (*L);
+//}
+//void create(struct Node**L, int num)
+//{
+//	int i = 0, n = 0;
+//	struct Node* p, *temp;
+//	p = (*L);
+//	for (i = 1; i <= num; i++)
+//	{
+//		temp = (struct Node*)malloc(sizeof(struct Node));
+//		scanf("%d", &n);
+//		temp->number = n;
+//		temp->id = i;
+//		p->next = temp;
+//		p = temp;
+//	}
+//	p->next = *L;
+//}
+//void print(struct Node*L)
+//{
+//	struct Node* p;
+//	p = L->next;
+//	while (p != L)
+//	{
+//		printf(" %d   密码%d\n ", p->id, p->number);
+//		p = p->next;
+//	}
+//}
+//void joseph(int m, int n, struct Node**L)//m为人数，n为起始密码数
+//{
+//	struct Node* p = (*L);
+//	struct Node* deltemp = NULL;
+//	int i = 1, j = 1;
+//	for (i = 1; i < m; i++)
+//	{
+//		for (j = 1; j < n - 1; j++)//p是deltemp前面的一个指针
+//		{
+//			p = p->next;
+//		}
+//		deltemp = p->next;//找到要删除的结点
+//		printf("第%d个人出列,其密码为%d\n", deltemp->id, deltemp->number);
+//		n = deltemp->number;//把要删除的密码给到n
+//		p->next = p->next->next;//删除
+//		free(deltemp);
+//	}
+//}
+//int main()
+//{
+//	struct Node* L;
+//	init(&L);
+//	create(&L, 7);
+//	print(L);
+//	joseph(20, 7, &L);
+//	return 0;
+//}
 //3^3=0
 //5^5=0
 //a^a=0

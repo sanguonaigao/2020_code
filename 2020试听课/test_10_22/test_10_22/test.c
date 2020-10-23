@@ -3,25 +3,45 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <stdio.h>
+#include <string.h>
 int main()
 {
-	char input[20] = {0};
-	system("shutdown -s -t 60");
+	long int code;                  //code-密码
+	char id[10] = { 0 };                        //定义变量  id-账号
+	printf("请输入账号:\n");        //输出提示语
+	scanf("%s", &id);                //输入账号
+	printf("请输入密码:\n");
+	scanf("%d", &code);
+	if (strcmp(id, "xyz") == 0 && code == 727116)
 
-again:
-	printf("请注意，你的电脑在1分钟内关机，如果输入：我是猪，就取消关机\n");
-	scanf("%s", input);//
-	if (strcmp(input, "我是猪") == 0)//string compare
-	{
-		system("shutdown -a");
-	}
+		printf("Yes\n");
+
 	else
-	{
-		goto again;
-	}
+		printf("密码或账号错误，请重新输入\n");
 	return 0;
 }
+
+
+//
+//int main()
+//{
+//	char input[20] = {0};
+//	system("shutdown -s -t 60");
+//
+//again:
+//	printf("请注意，你的电脑在1分钟内关机，如果输入：我是猪，就取消关机\n");
+//	scanf("%s", input);//
+//	if (strcmp(input, "我是猪") == 0)//string compare
+//	{
+//		system("shutdown -a");
+//	}
+//	else
+//	{
+//		goto again;
+//	}
+//	return 0;
+//}
 
 //
 //Leetcode

@@ -241,20 +241,59 @@
 //}
 
 
-typedef struct Node
-{
-	int data;
-	struct Node* next;
-}Node;
+//typedef struct Node
+//{
+//	int data;
+//	struct Node* next;
+//}Node;
+//
+//int main()
+//{
+//	//int *p1, *p2;
+//	//局部变量
+//	//ps = &s1;
+//	struct Node n;
+//	Node n2;
+//	return 0;
+//}
 
-int main()
-{
-	//int *p1, *p2;
-	//局部变量
-	//ps = &s1;
-	struct Node n;
-	Node n2;
-	return 0;
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h> 
+#include <assert.h>
+
+
+const char* my_strstr(const char* str, const char* str1) {
+	for (int i = 0; i < (int)strlen(str); i++) {
+		int tmp = i;
+		int j = 0;
+		for (; j < (int)strlen(str1); j++) {
+
+
+			if (str[tmp] != str1[j]) {
+				break;
+
+			}
+			tmp++;
+		}
+		if (j == (int)strlen(str1)) {
+			return str + i;
+		}
+	}
+	return NULL;
 }
 
 
+int main() {
+
+	char str[1024] = "abbbbcdef";
+	char str1[] = "bbc";
+
+	const char* ret = my_strstr(str, str1);
+	printf("%s\n", ret);
+
+
+	system("pause");
+	return 0;
+}

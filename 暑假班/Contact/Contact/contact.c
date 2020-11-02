@@ -2,34 +2,101 @@
 
 #include "contact.h"
 
-void add_contact(Contact* pc)
+void init_contact(Contact* pc)
 {
-	if (pc->sz == MAX)
+	assert(pc);
+	pc->sz = 0;
+	pc->capacity = DEFAULT_SZ;
+	pc->data = (PeoInfo*)malloc(DEFAULT_SZ*sizeof(PeoInfo));
+	if (pc->data == NULL)
 	{
-		printf("通讯录已满\n");
-	}
-	else
-	{
-		printf("请输入名字:>");
-		scanf("%s", pc->data[pc->sz].name);
-		printf("请输入电话:>");
-		scanf("%s", pc->data[pc->sz].tele);
-		printf("请输入地址:>");
-		scanf("%s", pc->data[pc->sz].addr);
-		printf("请输入QQ:>");
-		scanf("%s", pc->data[pc->sz].qq);
-		printf("请输入性别:>");
-		scanf("%s", pc->data[pc->sz].sex);
-		printf("请输入年龄:>");
-		scanf("%d", &(pc->data[pc->sz].age));
-
-		pc->sz++;
-		printf("添加成功\n");
+		perror("InitContact::malloc");
+		return;
 	}
 }
 
+void destroy_contact(Contact* pc)
+{
+	assert(pc);
+	free(pc->data);
+	pc->data = NULL;
+	pc->capacity = 0;
+	pc->sz = 0;
+}
+
+//
+//void add_contact(Contact* pc)
+//{
+//	if (pc->sz == MAX)
+//	{
+//		printf("通讯录已满\n");
+//	}
+//	else
+//	{
+//		printf("请输入名字:>");
+//		scanf("%s", pc->data[pc->sz].name);
+//		printf("请输入电话:>");
+//		scanf("%s", pc->data[pc->sz].tele);
+//		printf("请输入地址:>");
+//		scanf("%s", pc->data[pc->sz].addr);
+//		printf("请输入QQ:>");
+//		scanf("%s", pc->data[pc->sz].qq);
+//		printf("请输入性别:>");
+//		scanf("%s", pc->data[pc->sz].sex);
+//		printf("请输入年龄:>");
+//		scanf("%d", &(pc->data[pc->sz].age));
+//
+//		pc->sz++;
+//		printf("添加成功\n");
+//	}
+//}
+
+
+
+void add_contact(Contact* pc)
+{
+	assert(pc);
+
+	if (pc->sz == pc->capacity)
+	{
+		//增加容量
+		PeoInfo* ptr = (PeoInfo*)realloc(pc->data, (pc->capacity + INC)*sizeof(PeoInfo));
+		if (ptr != NULL)
+		{
+			pc->data = ptr;
+			pc->capacity += INC;
+			printf("增容成功\n");
+		}
+		else
+		{
+			perror("add_contact::realloc");
+			return;
+		}
+	}
+	//
+	printf("请输入名字:>");
+	scanf("%s", pc->data[pc->sz].name);
+	printf("请输入电话:>");
+	scanf("%s", pc->data[pc->sz].tele);
+	printf("请输入地址:>");
+	scanf("%s", pc->data[pc->sz].addr);
+	printf("请输入QQ:>");
+	scanf("%s", pc->data[pc->sz].qq);
+	printf("请输入性别:>");
+	scanf("%s", pc->data[pc->sz].sex);
+	printf("请输入年龄:>");
+	scanf("%d", &(pc->data[pc->sz].age));
+
+	pc->sz++;
+	printf("添加成功\n");
+}
+
+
+
 void show_contact(Contact* pc)
 {
+	assert(pc);
+
 	int i = 0;
 	printf("%10s %12s %20s %5s %12s %5s\n", "名字", "电话", "地址", "年龄", "QQ", "性别");
 	for (i = 0; i < pc->sz; i++)
@@ -45,6 +112,8 @@ void show_contact(Contact* pc)
 
 static int find_peo_by_name(Contact* pc, char name[])
 {
+	assert(pc);
+
 	int i = 0;
 	for (i = 0; i < pc->sz; i++)
 	{
@@ -58,6 +127,7 @@ static int find_peo_by_name(Contact* pc, char name[])
 
 void del_contact(Contact* pc)
 {
+	assert(pc);
 
 	if (pc->sz == 0)
 	{
@@ -91,6 +161,8 @@ void del_contact(Contact* pc)
 
 void search_contact(Contact* pc)
 {
+	assert(pc);
+
 	char name[MAX_NAME] = {0};
 	printf("请输入要查找人的名字:>");
 	scanf("%s", name);
@@ -115,6 +187,8 @@ void search_contact(Contact* pc)
 
 void modify_contact(Contact* pc)
 {
+	assert(pc);
+
 	char name[MAX_NAME] = { 0 };
 	printf("请输入要修改人的名字:>");
 	scanf("%s", name);
@@ -144,6 +218,8 @@ void sort_contact(Contact* pc)
 {
 	int i = 0;
 	int j = 0;
+	assert(pc);
+
 	for (i = 0; i < pc->sz - 1; i++)
 	{
 		int flag = 1;//假设已经有序

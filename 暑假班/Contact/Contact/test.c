@@ -30,6 +30,8 @@ void test()
 {
 	//创建的通讯录
 	Contact con = {0};
+	//初始化通讯录
+	init_contact(&con);
 	int input = 0;
 	do
 	{
@@ -57,6 +59,7 @@ void test()
 			modify_contact(&con);
 			break;
 		case EXIT:
+			destroy_contact(&con);
 			printf("退出通讯录\n");
 			break;
 		default:

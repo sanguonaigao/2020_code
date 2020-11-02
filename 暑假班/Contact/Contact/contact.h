@@ -5,8 +5,13 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <assert.h>
 
-#define MAX 1000
+
+#define DEFAULT_SZ 3
+#define INC 2
+
 
 #define MAX_NAME 20
 #define MAX_TELE 12
@@ -25,12 +30,22 @@ typedef struct PeoInfo
 }PeoInfo;
 
 //通讯录
+//typedef struct Contact
+//{
+//	PeoInfo data[MAX];//数据
+//	int sz;//有效个数
+//}Contact;
+
+//默认可以存放5个人的信息
 typedef struct Contact
 {
-	PeoInfo data[MAX];//数据
+	PeoInfo *data;//数据
 	int sz;//有效个数
+	int capacity;//通讯当前的容量
 }Contact;
 
+//初始化通讯录的
+void init_contact(Contact* pc);
 
 //添加一个人的信息
 void add_contact(Contact* pc);
@@ -49,4 +64,10 @@ void modify_contact(Contact* pc);
 
 //排序通讯录的数据
 void sort_contact(Contact* pc);
+
+//销毁通讯录的
+void destroy_contact(Contact* pc);
+
+
+
 

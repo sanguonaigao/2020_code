@@ -4,23 +4,51 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main()
-{
-	char input[20] = { 0 };//存放数据
-	system("shutdown -s -t 60");//执行系统命令的
-again:
-	printf("请注意，你的电脑在1分钟后关机，如果输入：我是猪，就取消关机\n");
-	scanf("%s", input);
-	if (strcmp(input, "我是猪") == 0)//string compare
-	{
-		system("shutdown -a");
-	}
-	else
-	{
-		goto again;
-	}
-	return 0;
-}
+#include <stdio.h>
+
+//8
+//7     6
+//6    5    5    4
+//5     4    4    3     4   3    3  2
+//4  3    3   2  3  2  2  1   3  2  2  1  2 1 1 0
+//3221 2 1 10 21 10 10     21101010
+//2110 10 10 10 10
+//10
+//int cnt = 0;
+//int fib(int n){
+//	cnt++;
+//	if (n == 0)
+//		return 1;
+//	else if (n == 1)
+//		return 2;
+//	else
+//		return fib(n - 1) + fib(n - 2);
+//}
+//void main()
+//{
+//	fib(8);
+//	
+//	printf("%d", cnt);
+//}
+
+//
+//int main()
+//{
+//	char input[20] = { 0 };//存放数据
+//	system("shutdown -s -t 60");//执行系统命令的
+//again:
+//	printf("请注意，你的电脑在1分钟后关机，如果输入：我是猪，就取消关机\n");
+//	scanf("%s", input);
+//	if (strcmp(input, "我是猪") == 0)//string compare
+//	{
+//		system("shutdown -a");
+//	}
+//	else
+//	{
+//		goto again;
+//	}
+//	return 0;
+//}
 
 //3^3=0
 //5^5=0

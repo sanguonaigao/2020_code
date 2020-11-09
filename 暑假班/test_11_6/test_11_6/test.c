@@ -72,52 +72,66 @@
 
 #include <stdio.h>
 
-
-
-//×Ö·û´®µÄÄæĞò
-void reverse(char*left, char*right)
-{
-	while (left<right)
-	{
-		char tmp = *left;
-		*left = *right;
-		*right = tmp;
-		left++;
-		right--;
-	}
-}
-
-void revserse_string(char* str)
-{
-	while (*str)
-	{
-		char* start = str;
-		char* end = str;
-		while (*end != ' ' && *end != '\0')
-		{
-			end++;
-		}
-		//ÄæĞòµ¥´Ê
-		reverse(start, end - 1);
-		if (*end != '\0')
-			str = end + 1;
-		else
-			str = end;
-	}
-	reverse();
-}
-int main()
-{
-	char arr[100] = { 0 };
-	//
-	gets(arr);
-	//·­×ª
-	//beijing. like I
-	revserse_string(arr);
-	printf("%s", arr);
-	return 0;
-}
+//
+//
+////×Ö·û´®µÄÄæĞò
+//void reverse(char*left, char*right)
+//{
+//	while (left<right)
+//	{
+//		char tmp = *left;
+//		*left = *right;
+//		*right = tmp;
+//		left++;
+//		right--;
+//	}
+//}
+//
+//void revserse_string(char* str)
+//{
+//	while (*str)
+//	{
+//		char* start = str;
+//		char* end = str;
+//		while (*end != ' ' && *end != '\0')
+//		{
+//			end++;
+//		}
+//		//ÄæĞòµ¥´Ê
+//		reverse(start, end - 1);
+//		if (*end != '\0')
+//			str = end + 1;
+//		else
+//			str = end;
+//	}
+//	reverse();
+//}
+//int main()
+//{
+//	char arr[100] = { 0 };
+//	//
+//	gets(arr);
+//	//·­×ª
+//	//beijing. like I
+//	revserse_string(arr);
+//	printf("%s", arr);
+//	return 0;
+//}
 
 //I like beijing.
 //I ekil .gnijieb
 //beijing. like I
+#include <stdio.h>
+#include <string.h>
+
+
+int main()
+{
+	char arr[] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g' };
+	printf("%d\n", strlen(arr));
+	return 0;
+}
+
+
+
+

@@ -59,6 +59,7 @@ void test()
 			modify_contact(&con);
 			break;
 		case EXIT:
+			save_contact(&con);
 			destroy_contact(&con);
 			printf("�˳�ͨѶ¼\n");
 			break;

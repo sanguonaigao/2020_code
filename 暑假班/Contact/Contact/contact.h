@@ -12,7 +12,6 @@
 #define DEFAULT_SZ 3
 #define INC 2
 
-
 #define MAX_NAME 20
 #define MAX_TELE 12
 #define MAX_ADDR 100
@@ -44,6 +43,9 @@ typedef struct Contact
 	int capacity;//通讯当前的容量
 }Contact;
 
+//增容
+void check_capacity(Contact* pc);
+
 //初始化通讯录的
 void init_contact(Contact* pc);
 
@@ -68,6 +70,10 @@ void sort_contact(Contact* pc);
 //销毁通讯录的
 void destroy_contact(Contact* pc);
 
+//保存通讯录到文件
+void save_contact(Contact* pc);
 
+//加载通讯录
+void load_contact(Contact* pc);
 
 

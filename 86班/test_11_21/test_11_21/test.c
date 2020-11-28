@@ -443,8 +443,21 @@ void menu()
 //	return 0;
 //}
 
+#include <stdio.h>
+#include <conio.h>
+
 int main()
 {
+	//int n = 0;
+	//int h = 0;
+	//int m = 0;
+	//scanf("%d %d %d", &n, &h, &m);
+	//if (m/h>0)
+	//	printf("%d\n", n - m%h - 1);
+	//else
+	//	printf("%d\n", n - m%h);
 
+	int ch = getch();
+	printf("%c\n", ch);
 	return 0;
-}
+}	

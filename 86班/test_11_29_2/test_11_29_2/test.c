@@ -96,30 +96,100 @@
 //}
 //
 
+//
+//int main()
+//{
+//	int arr[10] = { 1, 2, 3, 4, 5};
+//	//int sz = sizeof(arr) / sizeof(arr[0]);
+//
+//	printf("%p\n", &arr);//数组的地址
+//	printf("%p\n", &arr+1);//数组的地址
+//
+//	printf("%p\n", arr);//首元素的地址
+//	printf("%p\n", arr+1);//首元素的地址
+//
+//	//数组名是表示数组首元素的地址
+//	//但是有2个例外：
+//	//（1）sizeof(数组名)-数组名表示这个数组，sizeof(数组名)计算的也是整个数组的大小
+//	//（2）&数组名，数组名表示这个数组，&数组名表示整个数组的地址
+//	//
+//	//printf("%p\n", arr);
+//	//printf("%p\n", &arr[0]);
+//	//printf("%d\n", *arr);
+//
+//	return 0;
+//}
+//
+//
+//
+//
+//#include <stdio.h>
+//int main()
+//{
+//	int n = 0;
+//	while (scanf("%d", &n) != EOF)
+//	{
+//		int i = 0;
+//		for (i = n; i >= 0; i--)
+//		{
+//			int j = 0;
+//			for (j = 0; j <= i; j++)
+//			{
+//				printf("* ");
+//			}
+//			printf("\n");
+//		}
+//		for (i = 1; i <= n; i++)
+//		{
+//			int j = 0;
+//			for (j = 0; j <= i; j++)
+//			{
+//				printf("* ");
+//			}
+//			printf("\n");
+//		}
+//	}
+//	return 0;
+//}
+
+#include <stdio.h>
 
 int main()
 {
-	int arr[10] = { 1, 2, 3, 4, 5};
-	//int sz = sizeof(arr) / sizeof(arr[0]);
-
-	printf("%p\n", &arr);//数组的地址
-	printf("%p\n", &arr+1);//数组的地址
-
-	printf("%p\n", arr);//首元素的地址
-	printf("%p\n", arr+1);//首元素的地址
-
-	//数组名是表示数组首元素的地址
-	//但是有2个例外：
-	//（1）sizeof(数组名)-数组名表示这个数组，sizeof(数组名)计算的也是整个数组的大小
-	//（2）&数组名，数组名表示这个数组，&数组名表示整个数组的地址
-	//
-	//printf("%p\n", arr);
-	//printf("%p\n", &arr[0]);
-	//printf("%d\n", *arr);
+	int n = 0;
+	int arr[50] = { 0 };
+	int m = 0;//要插入的数据
+	//输入数据
+	scanf("%d", &n);
+	int i = 0;
+	for (i = 0; i<n; i++)
+	{
+		scanf("%d", &arr[i]);
+	}
+	scanf("%d", &m);
+	//处理
+	for (i = n - 1; i >= 0; i--)
+	{
+		if (arr[i]> m)
+		{
+			arr[i + 1] = arr[i];
+		}
+		else
+		{
+			arr[i + 1] = m;
+			break;
+		}
+	}
+	if (i == 0)
+	{
+		arr[i] = m;
+	}
+	//打印
+	for (i = 0; i<n + 1; i++)
+	{
+		printf("%d ", arr[i]);
+	}
 
 	return 0;
 }
-
-
-
 

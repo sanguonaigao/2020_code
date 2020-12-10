@@ -199,30 +199,30 @@
 
 #include <assert.h>
 //
-
-char* my_strcpy(char* dest, const char*src)
-{
-	char* ret = dest;
-	assert(dest != NULL);//╤оят
-	assert(src != NULL);//╤оят
-
-	while (*dest++ = *src++)
-	{
-		;
-	}
-
-	return ret;
-}
-
-int main()
-{
-	char arr1[20] = "xxxxxxxx";
-	char *p = "abcdef";
-	my_strcpy(arr1, p);
-	printf("%s\n", arr1);
-
-	return 0;
-}
+//
+//char* my_strcpy(char* dest, const char*src)
+//{
+//	char* ret = dest;
+//	assert(dest != NULL);//╤оят
+//	assert(src != NULL);//╤оят
+//
+//	while (*dest++ = *src++)
+//	{
+//		;
+//	}
+//
+//	return ret;
+//}
+//
+//int main()
+//{
+//	char arr1[20] = "xxxxxxxx";
+//	char *p = "abcdef";
+//	my_strcpy(arr1, p);
+//	printf("%s\n", arr1);
+//
+//	return 0;
+//}
 
 
 //int main()
@@ -235,3 +235,18 @@ int main()
 //	printf("num = %d\n", num);
 //	return 0;
 //}
+
+
+int main()
+{
+	int a, q, n, sum;
+	a = 1;
+	q = 2;
+	for (n = sum = 0; sum <= 100; n++)
+	{
+		sum += a;
+		a *= q;
+	}
+	printf("%d\n", n);
+	return 0;
+}

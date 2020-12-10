@@ -1,82 +1,50 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include "game.h"
 
-void play_game()
-{
-	int arr[ROW][COL];
-	init_board(arr, ROW, COL, (char)'*');
-	int start = 0;// full_judge(arr, ROW, COL);
-	//if (start == 0)
-	//	printf("初始化错误\n");
-	//else
-	{
-		display_board(arr, ROW, COL);
-		while (start)
-		{
-			int n = 0;
-			set_window(arr, ROW, COL);
-			n=judge(arr, ROW, COL);
-			if (n == 0)
-			{
-				printf("电脑获胜\n");
-				break;
-			}
-			else if (n == 1)
-			{
-				printf("玩家获胜");
-				break;
-			}
-			display_board(arr, ROW, COL);
-			set_player(arr, ROW, COL);
-			n=judge(arr, ROW, COL);
-			if (n == 0)
-			{
-				printf("电脑获胜\n");
-				break;
-			}
-			else if (n == 1)
-			{
-				printf("玩家获胜");
-				break;
-			}
-			display_board(arr, ROW, COL);
-			start = full_judge(arr, ROW, COL);
-			if (start == 0)
-				printf("平局");
-		}
-	}	
-}
-void menu()
-{
-		printf("*************************\n");
-		printf("****1  start,0  exit*****\n");
-		printf("*************************\n");
-}
-void test()
-{
-	srand((unsigned int)time(NULL));
-	int input = 0;
-	do
-	{
-		menu();
-		printf("请输入:> ");
-		scanf("%d", &input);
-		switch (input)
-		{
-		case 0:
-			printf("退出游戏\n");
-			break;
-		case 1:
-			play_game();
-			break;
-		default:
-			printf("输入错误，请重新输入:>");
-		}
-	} while (input);
-}
+#include <stdio.h>
 int main()
 {
-	
-	test();
+	int n = 0;
+	int arr[100];
+	scanf("%d", &n);
+	int i = 0;
+	for (i = 0; i<n; i++)
+	{
+		scanf("%d", &arr[i]);
+	}
+	//排序
+	for (i = 0; i<n - 1; i++)
+	{
+		int j = 0;
+		for (j = 0; j<n - 1 - i; j++)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				int tmp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = tmp;
+			}
+		}
+	}
+	//去重
+	int j = 0;
+	for (i = 0; i<n-1; i++)
+	{
+		//把i+1后边的元素往前移动
+		if (arr[i] == arr[i + 1])
+		{
+			int k = 0;
+			for (k = i; k<n - 1; k++)
+			{
+				arr[k] = arr[k + 1];
+			}
+			n--;
+			i--;
+		}
+	}
+	//打印
+	for (i = 0; i<n; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	system("pause");
 	return 0;
 }

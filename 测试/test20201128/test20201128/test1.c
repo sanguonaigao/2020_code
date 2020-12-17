@@ -1,50 +1,77 @@
-
 #include <stdio.h>
+#include <stdlib.h>
+
+struct Node
+{
+	int data;
+	struct Node* next;
+};
+
 int main()
 {
 	int n = 0;
-	int arr[100];
-	scanf("%d", &n);
+	struct Node* list = NULL;
+	struct Node* tail = NULL;
+	//输入结点
 	int i = 0;
+	scanf("%d", &n);
 	for (i = 0; i<n; i++)
 	{
-		scanf("%d", &arr[i]);
-	}
-	//排序
-	for (i = 0; i<n - 1; i++)
-	{
-		int j = 0;
-		for (j = 0; j<n - 1 - i; j++)
+		int data = 0;
+		scanf("%d", &data);
+		struct Node *n = (struct Node*)malloc(sizeof(struct Node));
+		n->data = data;
+		n->next = NULL;
+
+		if (list == NULL)
 		{
-			if (arr[j] > arr[j + 1])
-			{
-				int tmp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = tmp;
-			}
+			list = n;
+			tail = list;
+		}
+		else
+		{
+			tail->next = n;
+			tail = tail->next;
 		}
 	}
-	//去重
-	int j = 0;
-	for (i = 0; i<n-1; i++)
+
+
+	//删除结点
+	int del = 0;
+	scanf("%d", &del);
+	struct Node *cur = list;
+	struct Node *prev = NULL;
+	while (cur)
 	{
-		//把i+1后边的元素往前移动
-		if (arr[i] == arr[i + 1])
+		//找到了
+		if (cur->data == del)
 		{
-			int k = 0;
-			for (k = i; k<n - 1; k++)
+			struct Node* pd = cur;
+			//第一个结点
+			if (cur == list)
 			{
-				arr[k] = arr[k + 1];
+				list = list->next;
+				cur = list;
 			}
-			n--;
-			i--;
+			else
+			{
+				prev->next = cur->next;
+				cur = prev->next;
+			}
+			free(pd);
+		}
+		else//找不到
+		{
+			prev = cur;
+			cur = cur->next;
 		}
 	}
-	//打印
-	for (i = 0; i<n; i++)
+	cur = list;
+	while (cur)
 	{
-		printf("%d ", arr[i]);
+		printf("%d ", cur->data);
+		cur = cur->next;
 	}
-	system("pause");
+
 	return 0;
 }

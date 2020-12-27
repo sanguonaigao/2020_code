@@ -35,8 +35,8 @@ void test()
 {
 	int input = 0;
 	//创建的通讯录
-	Contact con = {0};
-	InitContact(&con);//初始化通讯录
+	Contact* pc = NULL;//维护通讯录的指针
+	InitContact(&pc);//初始化通讯录
 	do
 	{
 		menu();
@@ -45,16 +45,21 @@ void test()
 		switch (input)
 		{
 		case ADD:
-			AddContact(&con);
+			AddContact(&pc);
 			break;
 		case DEL:
-			DelContact(&con);
+			DelContact(pc);
 			break;
 		case SHOW:
-			ShowContact(&con);
+			ShowContact(pc);
 			break;
 		case EXIT:
+			SaveContact(pc);
+			DestoryContact(&pc);
 			printf("退出通讯录\n");
+			break;
+		case SAVE:
+			SaveContact(pc);
 			break;
 		default:
 			printf("选择错误\n");

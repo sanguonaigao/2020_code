@@ -4,40 +4,33 @@
 #include<stdlib.h>
 #include<time.h>
 
-
-
-int main()
+#include<stdio.h>
+#include<string.h>
+main()
 {
-	int n = 0;
-	while (~scanf("%d", &n))
+	int i, j;
+	char temp[20];
+	char str[][9] = { "Pascal", "Basic", "Fortran", "Java", "Visual C" };
+
+	for (i = 0; i <= 4; i++)	
 	{
-		int arr[100];
-		int i = 0;
-		for (i = 0; i<n; i++)
+		for (j = i + 1; j <= 5; j++)
 		{
-			arr[i] = i + 1;
-		}
-		for (i = 2; i < n; i++)
-		{
-			int j = 0;
-			for (j = i + 1; j < n; j++)
+			if (strcmp(str[i], str[j])>0)
 			{
-				if (arr[j] % i == 0)
-					arr[j] = 0;
+				strcpy(temp, str[i]);
+				strcpy(str[i], str[j]);
+				strcpy(str[j], temp);
 			}
 		}
-		int count = 0;
-		for (i = 2; i < n; i++)
-		{
-			if (arr[i] != 0)
-				printf("%d ", arr[i]);
-			else
-				count++;
-		}
-		printf("\n%d\n", count);
 	}
-	return 0;
+
+	for (i = 0; i<5; i++)
+	{
+		printf("%s\n", str[i]);
+	}
 }
+
 
 
 //int Add(int x, int y)

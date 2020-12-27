@@ -2,35 +2,83 @@
 
 #include "contact.h"
 
-void InitContact(Contact* pc)
+void InitContact(Contact** ppc)
 {
-	pc->sz = 0;
-	memset(pc->data, 0, sizeof(pc->data));
+	*ppc = (Contact* )malloc(sizeof(Contact)+DEFAULT_SZ*sizeof(PeoInfo));
+	if (*ppc == NULL)
+	{
+		return;
+	}
+	(*ppc)->sz = 0;
+	(*ppc)->capacity = DEFAULT_SZ;
+	memset((*ppc)->data, 0, (*ppc)->capacity*sizeof(PeoInfo));
+	//把文件中的信息加载到通讯录中
+	LoadContact(ppc);
+}
+//
+//void AddContact(Contact* pc)
+//{
+//	if (pc->sz == MAX)
+//	{
+//		printf("通讯录已满\n");
+//	}
+//	else
+//	{
+//		printf("请输入名字:>");
+//		scanf("%s", pc->data[pc->sz].name);
+//		printf("请输入年龄:>");
+//		scanf("%d", &(pc->data[pc->sz].age));
+//		printf("请输入性别:>");
+//		scanf("%s", pc->data[pc->sz].sex);
+//		printf("请输入电话:>");
+//		scanf("%s", pc->data[pc->sz].tele);
+//		printf("请输入地址:>");
+//		scanf("%s", pc->data[pc->sz].addr);
+//		//
+//		pc->sz++;
+//		printf("增加成功\n");
+//	}
+//}
+
+
+void CheckCapacity(Contact** pc)
+{
+	if ((*pc)->sz == (*pc)->capacity)
+	{
+		//增加容量
+		Contact* ptr = (Contact*)realloc((*pc), sizeof(Contact)+
+			((*pc)->capacity + 2)*sizeof(PeoInfo));
+		if (ptr == NULL)
+		{
+			return;
+		}
+		else
+		{
+			(*pc) = ptr;
+			(*pc)->capacity += 2;
+			printf("增容成功\n");
+		}
+	}
+	
+}
+void AddContact(Contact** ppc)
+{
+	CheckCapacity(ppc);
+	printf("请输入名字:>");
+	scanf("%s", (*ppc)->data[(*ppc)->sz].name);
+	printf("请输入年龄:>");
+	scanf("%d", &((*ppc)->data[(*ppc)->sz].age));
+	printf("请输入性别:>");
+	scanf("%s", (*ppc)->data[(*ppc)->sz].sex);
+	printf("请输入电话:>");
+	scanf("%s", (*ppc)->data[(*ppc)->sz].tele);
+	printf("请输入地址:>");
+	scanf("%s", (*ppc)->data[(*ppc)->sz].addr);
+	//
+	(*ppc)->sz++;
+	printf("增加成功\n");
 }
 
-void AddContact(Contact* pc)
-{
-	if (pc->sz == MAX)
-	{
-		printf("通讯录已满\n");
-	}
-	else
-	{
-		printf("请输入名字:>");
-		scanf("%s", pc->data[pc->sz].name);
-		printf("请输入年龄:>");
-		scanf("%d", &(pc->data[pc->sz].age));
-		printf("请输入性别:>");
-		scanf("%s", pc->data[pc->sz].sex);
-		printf("请输入电话:>");
-		scanf("%s", pc->data[pc->sz].tele);
-		printf("请输入地址:>");
-		scanf("%s", pc->data[pc->sz].addr);
-		//
-		pc->sz++;
-		printf("增加成功\n");
-	}
-}
 
 
 void ShowContact(const Contact* pc)
@@ -95,4 +143,52 @@ void DelContact(Contact* pc)
 	}
 }
 
+void DestoryContact(Contact** ppc)
+{
+	free(*ppc);
+	*ppc = NULL;
+}
+
+
+//保存通讯录信息到文件
+void SaveContact(Contact* pc)
+{
+	FILE* pf = fopen("contact.dat", "wb");
+	if (pf == NULL)
+	{
+		perror("open file for writting");
+		return;
+	}
+	//写文件
+	int i = 0;
+	for (i = 0; i < pc->sz; i++)
+	{
+		fwrite(pc->data+i, sizeof(PeoInfo), 1, pf);
+	}
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
+}
+
+//加载文件中的信息到通讯录
+void LoadContact(Contact** ppc)
+{
+	FILE* pf = fopen("contact.dat", "rb");
+	if (pf == NULL)
+	{
+		perror("open file for reading");
+		return;
+	}
+	//读文件
+	PeoInfo tmp = { 0 };
+	while (fread(&tmp, sizeof(PeoInfo), 1, pf))
+	{
+		CheckCapacity(ppc);
+		(*ppc)->data[(*ppc)->sz] = tmp;
+		(*ppc)->sz++;
+	}
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
+}
 

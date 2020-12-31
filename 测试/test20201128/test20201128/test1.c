@@ -3,35 +3,25 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+#include <math.h>
 
-#include<stdio.h>
-#include<string.h>
-main()
+int main()
 {
-	int i, j;
-	char temp[20];
-	char str[][9] = { "Pascal", "Basic", "Fortran", "Java", "Visual C" };
+	double a = 0.3;
+	double b = 1.6;
+	double c = 1.9;
+	double d = a + b;
 
-	for (i = 0; i <= 4; i++)	
+	if (abs(b-c)<0.000001)
 	{
-		for (j = i + 1; j <= 5; j++)
-		{
-			if (strcmp(str[i], str[j])>0)
-			{
-				strcpy(temp, str[i]);
-				strcpy(str[i], str[j]);
-				strcpy(str[j], temp);
-			}
-		}
+		printf("d==c\n");
 	}
-
-	for (i = 0; i<5; i++)
+	else
 	{
-		printf("%s\n", str[i]);
+		printf("d!=c d=%lf c=%lf", d, c);
 	}
+	return 0;
 }
-
-
 
 //int Add(int x, int y)
 //{

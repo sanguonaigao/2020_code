@@ -5,23 +5,69 @@
 #include<time.h>
 #include <math.h>
 
+#include <stdio.h>
+#include <stdio.h>
+
 int main()
 {
-	double a = 0.3;
-	double b = 1.6;
-	double c = 1.9;
-	double d = a + b;
-
-	if (abs(b-c)<0.000001)
+	int n = 0;
+	int arr[5000] = { 0 };
+	//输入数据
+	scanf("%d", &n);
+	int i = 0;
+	for (i = 0; i<n; i++)
 	{
-		printf("d==c\n");
+		scanf("%d", &arr[i]);
 	}
-	else
+	//去重
+	for (i = 0; i<n; i++)
 	{
-		printf("d!=c d=%lf c=%lf", d, c);
+		int j = 0;
+		for (j = i + 1; j<n; j++)
+		{
+			//如果相等，要把后续元素往前移动
+			if (arr[i] == arr[j])
+			{
+				int k = 0;
+				for (k = j; k<n - 1; k++)
+				{
+					arr[k] = arr[k + 1];
+				}
+				n--;//去重一个，个数少1
+				j--;
+				//如果去重了arr[j]
+				//把下一个位置的数字arr[j+1]，放在新的arr[j]上
+				//恰好又和arr[i]相同,所以也要再判断
+				//3 2 3 3 3 4 5
+				//
+			}
+		}
+	}
+	for (i = 0; i<n; i++)
+	{
+		printf("%d ", arr[i]);
 	}
 	return 0;
 }
+
+//
+//int main()
+//{
+//	double a = 0.3;
+//	double b = 1.6;
+//	double c = 1.9;
+//	double d = a + b;
+//
+//	if (abs(b-c)<0.000001)
+//	{
+//		printf("d==c\n");
+//	}
+//	else
+//	{
+//		printf("d!=c d=%lf c=%lf", d, c);
+//	}
+//	return 0;
+//}
 
 //int Add(int x, int y)
 //{

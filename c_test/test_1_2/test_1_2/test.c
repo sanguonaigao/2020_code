@@ -1,16 +1,12 @@
-#define _CRT_SECURE_NO_WARNINGS 1
 
-int test()
-{
-	printf("test1\n");
-	//if (1)
-	//	return 0;
+#include <stdio.h>
 
-	printf("test2\n");
-}
 int main()
 {
-	test();
-	printf("hehe\n");
+	char arr[5] = { 0 };//arr中只有5个元素的空间
+	scanf("%s", arr);//这里输入的字符如果超过5个呢？怎么办？
+	printf("%s\n", arr);
 	return 0;
 }
+
+
